@@ -50,6 +50,38 @@ function boldPassage(word, text) {
   return htmlString + "</p>";
 }
 
+function mostCommonWords(text) {
+  //split passage into an array
+  let textArray = text.split(" ");
+  //count number of times each word is found in passage
+  let words;
+  let word1V = 0;
+  let word1T;
+  let word2V = 0;
+  let word2T;
+  let word3V = 0;
+  let word3T;
+  textArray.forEach(function(word) {
+    words = numberOfOccurrencesInText(word, text);
+    if (words > word1V) {
+      word1V = words;
+      word1T = word;
+    }
+    if (words > word2V && words < word1V)  {
+      word2V = words;
+      word2T = word;
+    }
+    if (words > word3V && words < word2V )  {
+      word3V = words;
+      word3T = word;
+    }
+  });
+  return word1T+": "+word1V+" | "+word2T+": "+word2V+" | "+word3T+": "+word3V;
+}
+
+//mostCommonWords("green green green green blue blue blue red red yellow")
+//mostCommonWords("red red green green blue yellow blue green")
+
 // UI Logic
 
 $(document).ready(function(){

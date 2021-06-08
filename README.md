@@ -25,6 +25,7 @@ Code: wordCounter("hi there 77 19");
 Expected Output: 2
 
 Describe: numberOfOccurrencesInText()
+
 Test: "It should return 0 occurrences of a word for an empty string."
 Code:
 const text = "";
@@ -96,3 +97,30 @@ const word = "hello";
 const text = "hello there";
 boldPassage(word, text);
 Expected Output: "<p><b>hello</b> there</p>"
+
+Describe: mostCommonWords()
+
+Test: "It should return an array of words used in the text"
+Code:
+const text = "blue red green blue";
+mostCommonWords(text);
+Expected Output: ["blue", "red", "green", "blue"]
+
+Test: "It should count the number of times a word is used in text"
+Code:
+const text = "blue blue red green blue";
+numberOfOccurences();
+mostCommonWords(text);
+Expected Output: [3,3,1,1,3]
+
+Test: "It should display words next to how many times they were used"
+Code:
+const text = "blue blue red green blue";
+numberOfOccurences();
+mostCommonWords(text);
+Expected Output:
+  blue: 3
+  blue: 3
+  red: 1
+  green: 1
+  blue: 3
